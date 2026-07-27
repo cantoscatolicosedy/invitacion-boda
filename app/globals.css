@@ -1,0 +1,771 @@
+@import "tailwindcss";
+
+:root {
+  --background: #35152a;
+  --foreground: #ffffff;
+
+  --mexican-pink: #d81b60;
+  --marigold: #f4b400;
+  --terracotta: #e85d2a;
+  --turquoise: #168c8c;
+  --deep-green: #274b3c;
+  --cream: #f5ead7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================================================= */
+/* V3 — APERTURA CINEMATOGRÁFICA PREMIUM             */
+/* Duración aproximada: 15 segundos                  */
+/* ================================================= */
+
+/* --------------------------------- */
+/* Fondo negro inicial */
+/* --------------------------------- */
+
+@keyframes cinematicBlack {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --------------------------------- */
+/* Fotografía con movimiento de cámara */
+/* --------------------------------- */
+
+@keyframes cinematicCamera {
+  0% {
+    opacity: 0;
+    transform: scale(1.18);
+    filter: brightness(0.25) blur(6px);
+  }
+
+  20% {
+    opacity: 1;
+    filter: brightness(0.55) blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: brightness(0.72) blur(0);
+  }
+}
+
+/* --------------------------------- */
+/* Luz cinematográfica */
+/* --------------------------------- */
+
+@keyframes cinematicLight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  35% {
+    opacity: 0.15;
+  }
+
+  60% {
+    opacity: 0.08;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* --------------------------------- */
+/* Overlay oscuro */
+/* --------------------------------- */
+
+@keyframes cinematicOverlay {
+  0% {
+    opacity: 0.95;
+  }
+
+  30% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* --------------------------------- */
+/* Flores principales */
+/* --------------------------------- */
+
+@keyframes floralRevealPremium {
+  0% {
+    opacity: 0;
+    transform: scale(1.12);
+    filter: blur(12px);
+  }
+
+  40% {
+    opacity: 0.25;
+    filter: blur(5px);
+  }
+
+  75% {
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 0.82;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* --------------------------------- */
+/* Movimiento floral */
+/* --------------------------------- */
+
+@keyframes floralBreath {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------- */
+/* Decoración flotante */
+/* --------------------------------- */
+
+@keyframes floatingDecoration {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(1deg);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+/* --------------------------------- */
+/* Texto superior */
+/* --------------------------------- */
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(12px);
+    letter-spacing: 0.8em;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    letter-spacing: 0.5em;
+  }
+}
+
+/* --------------------------------- */
+/* Nombres */
+/* --------------------------------- */
+
+@keyframes namesReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+    filter: blur(12px);
+  }
+
+  60% {
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* --------------------------------- */
+/* Símbolo & */
+/* --------------------------------- */
+
+@keyframes ampersandReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-15deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* --------------------------------- */
+/* Línea dorada */
+/* --------------------------------- */
+
+@keyframes goldenLineReveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 6rem;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------- */
+/* Fecha */
+/* --------------------------------- */
+
+@keyframes dateReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 0.8em;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.4em;
+  }
+}
+
+/* --------------------------------- */
+/* Cuenta regresiva */
+/* --------------------------------- */
+
+@keyframes countdownRevealPremium {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------- */
+/* Botón */
+/* --------------------------------- */
+
+@keyframes buttonRevealPremium {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------- */
+/* Indicador de scroll */
+/* --------------------------------- */
+
+@keyframes scrollIndicator {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================= */
+/* CLASES DE ANIMACIÓN                               */
+/* ================================================= */
+
+.cinematic-black {
+  animation: cinematicBlack 3s ease-out 0s forwards;
+}
+
+.cinematic-camera {
+  animation:
+    cinematicCamera 12s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.8s
+    forwards;
+}
+
+.cinematic-overlay {
+  animation:
+    cinematicOverlay 6s
+    ease-out
+    1.5s
+    forwards;
+}
+
+.cinematic-light {
+  animation:
+    cinematicLight 5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    4s
+    forwards;
+}
+
+.floral-premium {
+  animation:
+    floralRevealPremium 5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    3s
+    forwards,
+    floralBreath 10s
+    ease-in-out
+    8s
+    infinite;
+  opacity: 0;
+}
+
+.floating-decoration {
+  animation:
+    floatingDecoration 8s
+    ease-in-out
+    8s
+    infinite;
+}
+
+/* Texto superior */
+.title-premium {
+  animation:
+    titleReveal 2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    6s
+    forwards;
+  opacity: 0;
+}
+
+
+
+/* ================================= */
+/* SECUENCIA DE NOMBRES */
+/* ================================= */
+
+.names-premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nombre del novio */
+
+.groom-name-premium {
+  animation:
+    namesReveal 2.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    9.8s
+    forwards;
+
+  opacity: 0;
+}
+
+/* & */
+
+.ampersand-premium {
+  animation:
+    ampersandReveal 1.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    9s
+    forwards;
+
+  opacity: 0;
+}
+
+/* Nombre de la novia */
+
+.bride-name-premium {
+  animation:
+    namesReveal 2.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    7.2s
+    forwards;
+
+  opacity: 0;
+}
+
+
+/* & */
+.ampersand-premium {
+  animation:
+    ampersandReveal 1.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    8.2s
+    forwards;
+  opacity: 0;
+}
+
+/* Línea */
+.line-premium {
+  animation:
+    goldenLineReveal 1.4s
+    ease-out
+    9.3s
+    forwards;
+  opacity: 0;
+}
+
+/* Fecha */
+.date-premium {
+  animation:
+    dateReveal 1.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    10s
+    forwards;
+  opacity: 0;
+}
+
+/* Countdown */
+.countdown-premium {
+  animation:
+    countdownRevealPremium 1.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    11.2s
+    forwards;
+  opacity: 0;
+}
+
+/* Botón */
+.button-premium {
+  animation:
+    buttonRevealPremium 1.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    12.5s
+    forwards;
+  opacity: 0;
+}
+
+/* Scroll */
+.scroll-premium {
+  animation:
+    scrollIndicator 2s
+    ease-in-out
+    13.5s
+    forwards,
+    scrollIndicator 3s
+    ease-in-out
+    15.5s
+    infinite;
+  opacity: 0;
+}
+
+/* ================================================= */
+/* BOTÓN PREMIUM                                    */
+/* ================================================= */
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+.premium-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 1s ease;
+}
+
+.premium-button:hover::before {
+  left: 140%;
+}
+
+.premium-button:hover {
+  transform: translateY(-3px);
+  border-color: #f4b400;
+  background: #f4b400;
+  color: #35152a;
+  box-shadow:
+    0 10px 40px rgba(244, 180, 0, 0.25);
+}
+
+/* ================================================= */
+/* SECCIÓN — NUESTROS PADRES                         */
+/* ================================================= */
+
+@keyframes parentsFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes parentsLineReveal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 6rem;
+    opacity: 1;
+  }
+}
+
+/* Texto inicial */
+
+
+
+/* ================================================= */
+/* SECCIÓN — NUESTROS PADRES                         */
+/* ================================================= */
+
+@keyframes parentsFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Estado inicial */
+
+.parents-intro,
+.parents-title,
+.parents-bride,
+.parents-groom,
+.parents-quote {
+  opacity: 0;
+}
+
+/* Cuando la sección entra en pantalla */
+
+.parents-visible .parents-intro {
+  animation:
+    parentsFadeUp 1.4s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0s
+    forwards;
+}
+
+.parents-visible .parents-title {
+  animation:
+    parentsFadeUp 1.6s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.25s
+    forwards;
+}
+
+.parents-visible .parents-bride {
+  animation:
+    parentsFadeUp 1.6s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.6s
+    forwards;
+}
+
+.parents-visible .parents-groom {
+  animation:
+    parentsFadeUp 1.6s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.9s
+    forwards;
+}
+
+.parents-visible .parents-quote {
+  animation:
+    parentsFadeUp 1.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    1.3s
+    forwards;
+}
+
+
+
+/* ================================================= */
+/* ACCESIBILIDAD                                    */
+/* ================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================================================= */
+/* MOBILE                                            */
+/* ================================================= */
+
+@media (max-width: 640px) {
+  .cinematic-camera {
+    animation-duration: 14s;
+  }
+
+  .floral-premium {
+    background-size: cover;
+  }
+}
+
+
+/* ================================================= */
+/* NUESTRA HISTORIA                                  */
+/* ================================================= */
+
+@keyframes storyFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes storyLineReveal {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* ================================================= */
+/* NUESTRA HISTORIA — ANIMACIÓN POR SCROLL           */
+/* ================================================= */
+
+.story-item {
+  opacity: 0;
+  transform: translateY(70px);
+  filter: blur(8px);
+}
+
+.story-item-visible {
+  animation:
+    storyItemReveal 1.4s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes storyItemReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.story-item-visible .story-dot {
+  animation:
+    storyDotReveal 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.3s
+    forwards;
+}
+
+@keyframes storyDotReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+
+  70% {
+    transform: translateX(-50%) scale(1.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
