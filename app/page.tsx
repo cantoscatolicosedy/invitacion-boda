@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Parents from "@/components/Parents";
 import Story from "@/components/Story";
+import EventDetails from "@/components/EventDetails";
 
 
 export default function Home() {
@@ -24,6 +25,9 @@ export default function Home() {
 {/* ======================================== */}
 
 <Story />
+
+
+<EventDetails />
 
       <section
         id="historia"

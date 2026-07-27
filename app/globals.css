@@ -769,3 +769,343 @@ body {
     transform: translateX(-50%) scale(1);
   }
 }
+
+/* ================================================= */
+/* EL GRAN DÍA — EVENT DETAILS                       */
+/* ================================================= */
+
+.event-details-section {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 1.5rem;
+  background: #f5efe6;
+  color: #35152a;
+}
+
+.event-details-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.event-details-header {
+  max-width: 700px;
+  margin: 0 auto 6rem;
+  text-align: center;
+}
+
+.event-eyebrow {
+  margin-bottom: 1.5rem;
+  color: #a33b3b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+.event-details-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.event-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem auto;
+}
+
+.event-divider span {
+  width: 70px;
+  height: 1px;
+  background: rgba(53, 21, 42, 0.25);
+}
+
+.event-divider strong {
+  color: #d79a24;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.event-details-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(53, 21, 42, 0.65);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+/* GRID */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  align-items: start;
+}
+
+/* CARD */
+
+.event-card {
+  opacity: 0;
+  transform: translateY(70px);
+  filter: blur(8px);
+}
+
+.event-card-visible {
+  animation:
+    eventCardReveal
+    1.3s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes eventCardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.event-card-inner {
+  position: relative;
+  min-height: 560px;
+  padding: 4rem 3rem;
+  border: 1px solid rgba(53, 21, 42, 0.18);
+  background: rgba(255, 255, 255, 0.38);
+  text-align: center;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    background 0.5s ease;
+}
+
+.event-card-inner:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 25px 60px rgba(53, 21, 42, 0.08);
+}
+
+/* NUMBER */
+
+.event-card-number {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: rgba(53, 21, 42, 0.25);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+/* TYPE */
+
+.event-card-type {
+  margin-bottom: 2rem;
+  color: #a33b3b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+/* TIME */
+
+.event-card-time {
+  margin-bottom: 1.5rem;
+  color: #d79a24;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* TITLE */
+
+.event-card-title {
+  margin-bottom: 2rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* LOCATION */
+
+.event-card-location {
+  margin-bottom: 2rem;
+}
+
+.event-card-venue {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.event-card-city {
+  color: rgba(53, 21, 42, 0.55);
+  font-size: 0.9rem;
+}
+
+/* DESCRIPTION */
+
+.event-card-description {
+  max-width: 380px;
+  margin: 0 auto 2.5rem;
+  color: rgba(53, 21, 42, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* BUTTON */
+
+.event-card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid rgba(53, 21, 42, 0.35);
+  color: #35152a;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.event-card-button:hover {
+  border-color: #35152a;
+  background: #35152a;
+  color: #f5efe6;
+}
+
+.event-card-arrow {
+  font-size: 1rem;
+}
+
+/* FOOTER */
+
+.event-details-footer {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.event-footer-symbol {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: #d79a24;
+  font-size: 1.5rem;
+}
+
+.event-details-footer p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+/* DECORACIÓN */
+
+.event-floral-decoration {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("/images/flores-mexicanas.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.event-floral-left {
+  top: 10%;
+  left: -180px;
+  transform: rotate(-20deg);
+}
+
+.event-floral-right {
+  right: -180px;
+  bottom: 5%;
+  transform: rotate(160deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .event-details-section {
+    padding: 6rem 1.25rem;
+  }
+
+  .event-details-header {
+    margin-bottom: 4rem;
+  }
+
+  .event-details-title {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .event-details-intro {
+    font-size: 0.95rem;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .event-card-inner {
+    min-height: auto;
+    padding: 3.5rem 1.75rem;
+  }
+
+  .event-card-time {
+    font-size: 2.2rem;
+  }
+
+  .event-card-title {
+    font-size: 1.8rem;
+  }
+
+  .event-card-description {
+    font-size: 0.9rem;
+  }
+
+  .event-details-footer {
+    margin-top: 5rem;
+  }
+
+  .event-details-footer p {
+    font-size: 1.5rem;
+  }
+
+  .event-floral-decoration {
+    width: 250px;
+    height: 350px;
+  }
+
+  .event-floral-left {
+    left: -160px;
+  }
+
+  .event-floral-right {
+    right: -160px;
+  }
+}
