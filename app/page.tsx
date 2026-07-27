@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Parents from "@/components/Parents";
 import Story from "@/components/Story";
 import EventDetails from "@/components/EventDetails";
+import DressCode from "@/components/DressCode";
 
 
 export default function Home() {
@@ -28,6 +29,8 @@ export default function Home() {
 
 
 <EventDetails />
+
+<DressCode />
 
       <section
         id="historia"

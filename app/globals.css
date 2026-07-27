@@ -1109,3 +1109,212 @@ body {
     right: -160px;
   }
 }
+
+/* ================================================= */
+/* CÓDIGO DE VESTIMENTA                              */
+/* ================================================= */
+
+.dress-code-section {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 1.5rem;
+  background: #35152a;
+  color: #f5efe6;
+  text-align: center;
+}
+
+.dress-code-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(8px);
+}
+
+.dress-code-visible .dress-code-container {
+  animation:
+    dressCodeReveal
+    1.3s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes dressCodeReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* EYEBROW */
+
+.dress-code-eyebrow {
+  margin-bottom: 2rem;
+  color: #d79a24;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+/* DIVIDER */
+
+.dress-code-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.dress-code-divider span {
+  width: 70px;
+  height: 1px;
+  background: rgba(245, 239, 230, 0.3);
+}
+
+.dress-code-divider strong {
+  color: #d79a24;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* TITLE */
+
+.dress-code-title {
+  margin: 0 0 2rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+/* DESCRIPTION */
+
+.dress-code-description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(245, 239, 230, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+/* ICONS */
+
+.dress-code-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 500px;
+  margin: 5rem auto;
+  border-top: 1px solid rgba(245, 239, 230, 0.18);
+  border-bottom: 1px solid rgba(245, 239, 230, 0.18);
+}
+
+.dress-code-icon {
+  padding: 3rem 2rem;
+}
+
+.dress-code-icon + .dress-code-icon {
+  border-left: 1px solid rgba(245, 239, 230, 0.18);
+}
+
+.dress-code-icon span {
+  display: block;
+  margin-bottom: 1rem;
+  color: #d79a24;
+  font-size: 2rem;
+}
+
+.dress-code-icon p {
+  margin-bottom: 0.7rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+}
+
+.dress-code-icon small {
+  color: rgba(245, 239, 230, 0.55);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+/* NOTE */
+
+.dress-code-note {
+  color: rgba(245, 239, 230, 0.55);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* DECORATION */
+
+.dress-code-decoration {
+  position: absolute;
+  color: rgba(215, 154, 36, 0.12);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.dress-code-decoration-left {
+  top: 10%;
+  left: -80px;
+  transform: rotate(-20deg);
+}
+
+.dress-code-decoration-right {
+  right: -80px;
+  bottom: 10%;
+  transform: rotate(20deg);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .dress-code-section {
+    padding: 6rem 1.25rem;
+  }
+
+  .dress-code-title {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .dress-code-description {
+    font-size: 0.95rem;
+  }
+
+  .dress-code-icons {
+    margin: 4rem auto;
+  }
+
+  .dress-code-icon {
+    padding: 2.5rem 1rem;
+  }
+
+  .dress-code-icon p {
+    font-size: 1.2rem;
+  }
+
+  .dress-code-icon small {
+    font-size: 0.7rem;
+  }
+
+  .dress-code-note {
+    font-size: 1rem;
+  }
+
+  .dress-code-decoration {
+    font-size: 10rem;
+  }
+}
