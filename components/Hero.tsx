@@ -97,7 +97,7 @@ export default function Hero() {
           absolute
           inset-0
           z-10
-          bg-contain
+          bg-cover
           bg-center
           bg-no-repeat
           mix-blend-screen
