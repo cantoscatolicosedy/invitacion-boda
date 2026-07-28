@@ -1313,3 +1313,15 @@ body {
     font-size: 10rem;
   }
 }
+
+/* ================================================= */
+/* FLORES — AJUSTE PARA MÓVIL                        */
+/* ================================================= */
+
+@media (max-width: 640px) {
+  .floral-premium {
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
