@@ -4,6 +4,8 @@ import Story from "@/components/Story";
 import EventDetails from "@/components/EventDetails";
 import DressCode from "@/components/DressCode";
 
+import RSVP from "@/components/RSVP";
+
 
 export default function Home() {
   return (
@@ -31,6 +33,8 @@ export default function Home() {
 <EventDetails />
 
 <DressCode />
+
+<RSVP />
 
       <section
         id="historia"

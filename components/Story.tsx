@@ -7,21 +7,25 @@ const storyItems = [
     number: "01",
     title: "El comienzo",
     text: "El día que nuestros caminos se cruzaron y comenzó una historia que cambiaría nuestras vidas para siempre.",
+    image: "/images/foto1.jpg",
   },
   {
     number: "02",
     title: "Nuestro camino",
     text: "Con el paso del tiempo llegaron momentos, aventuras y recuerdos que nos hicieron descubrir que queríamos compartir la vida.",
+    image: "/images/foto2.jpg",
   },
   {
     number: "03",
     title: "El gran momento",
     text: "Un día decidimos dar el siguiente paso y comenzar a escribir juntos el capítulo más importante de nuestra historia.",
+    image: "/images/foto3.jpg",
   },
   {
     number: "04",
     title: "Y ahora...",
     text: "Queremos celebrar el comienzo de nuestra nueva historia rodeados de las personas que más queremos.",
+    image: "/images/foto4.jpg",
   },
 ];
 
@@ -48,7 +52,7 @@ function StoryItem({
         }
       },
       {
-        threshold: 0.25,
+        threshold: 0.2,
       }
     );
 
@@ -57,6 +61,8 @@ function StoryItem({
     return () => observer.disconnect();
   }, []);
 
+  const isEven = index % 2 === 0;
+
   return (
     <article
       ref={itemRef}
@@ -64,21 +70,56 @@ function StoryItem({
         story-item
         relative
         grid
+        items-center
         gap-10
         md:grid-cols-2
         md:gap-20
         ${isVisible ? "story-item-visible" : ""}
       `}
     >
-      {/* Contenido */}
+      {/* ================================= */}
+      {/* FOTO */}
+      {/* ================================= */}
+
+      <div
+        className={`
+          story-item-image
+          overflow-hidden
+          rounded-sm
+          ${
+            isEven
+              ? "md:col-start-1"
+              : "md:col-start-2 md:row-start-1"
+          }
+        `}
+      >
+        <img
+          src={item.image}
+          alt={item.title}
+          className="
+            h-[320px]
+            w-full
+            object-cover
+            object-top
+            transition-transform
+            duration-1000
+            hover:scale-105
+            md:h-[450px]
+          "
+        />
+      </div>
+
+      {/* ================================= */}
+      {/* CONTENIDO */}
+      {/* ================================= */}
 
       <div
         className={`
           story-item-content
           ${
-            index % 2 === 0
-              ? "md:pr-16 md:text-right"
-              : "md:col-start-2 md:pl-16"
+            isEven
+              ? "md:col-start-2 md:row-start-1 md:pl-16"
+              : "md:col-start-1 md:row-start-1 md:pr-16 md:text-right"
           }
         `}
       >
@@ -90,23 +131,40 @@ function StoryItem({
           {item.title}
         </h3>
 
-        <p className="mt-6 text-base leading-relaxed text-white/65 md:text-lg">
+        <div
+          className={`
+            my-6
+            h-px
+            w-16
+            bg-[#F4B400]
+            ${
+              isEven
+                ? "md:mr-auto"
+                : "md:ml-auto"
+            }
+          `}
+        />
+
+        <p className="text-base leading-relaxed text-white/65 md:text-lg">
           {item.text}
         </p>
       </div>
 
-      {/* Punto central */}
+      {/* ================================= */}
+      {/* PUNTO CENTRAL */}
+      {/* ================================= */}
 
       <div
         className="
           story-dot
           absolute
           left-1/2
-          top-2
+          top-1/2
           hidden
           h-4
           w-4
           -translate-x-1/2
+          -translate-y-1/2
           rounded-full
           border
           border-[#F4B400]
@@ -114,12 +172,6 @@ function StoryItem({
           md:block
         "
       />
-
-      {/* Espacio visual */}
-
-      {index % 2 === 0 && (
-        <div className="hidden md:block" />
-      )}
     </article>
   );
 }
@@ -138,7 +190,9 @@ export default function Story() {
         text-white
       "
     >
-      {/* Decoración floral */}
+      {/* ================================= */}
+      {/* DECORACIÓN FLORAL */}
+      {/* ================================= */}
 
       <div
         className="
@@ -156,7 +210,9 @@ export default function Story() {
         }}
       />
 
-      {/* Encabezado */}
+      {/* ================================= */}
+      {/* ENCABEZADO */}
+      {/* ================================= */}
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
 
@@ -178,9 +234,13 @@ export default function Story() {
 
       </div>
 
-      {/* Línea de tiempo */}
+      {/* ================================= */}
+      {/* LÍNEA DE TIEMPO */}
+      {/* ================================= */}
 
       <div className="relative z-10 mx-auto mt-32 max-w-5xl">
+
+        {/* Línea central */}
 
         <div
           className="
@@ -196,7 +256,9 @@ export default function Story() {
           "
         />
 
-        <div className="space-y-32 md:space-y-48">
+        {/* Historias */}
+
+        <div className="space-y-24 md:space-y-48">
 
           {storyItems.map((item, index) => (
             <StoryItem
@@ -210,9 +272,11 @@ export default function Story() {
 
       </div>
 
-      {/* Cierre */}
+      {/* ================================= */}
+      {/* CIERRE */}
+      {/* ================================= */}
 
-      <div className="mx-auto mt-40 max-w-3xl text-center">
+      <div className="relative z-10 mx-auto mt-32 max-w-3xl text-center md:mt-40">
 
         <div className="mb-8 text-3xl text-[#F4B400]">
           ✦

@@ -97,7 +97,7 @@ export default function Hero() {
           absolute
           inset-0
           z-10
-          bg-cover
+          bg-contain
           bg-center
           bg-no-repeat
           mix-blend-screen
@@ -183,7 +183,7 @@ export default function Hero() {
               lg:text-8xl
             "
           >
-            Nombre de la novia
+            Clara Iveth
           </div>
 
           {/* & */}
@@ -215,7 +215,7 @@ export default function Hero() {
               lg:text-8xl
             "
           >
-            Nombre del novio
+            Salvador
           </div>
 
         </div>
@@ -246,7 +246,7 @@ export default function Hero() {
             md:text-sm
           "
         >
-          20 · 12 · 2026
+          16 · 07 · 2027
         </p>
 
         {/* ================================= */}

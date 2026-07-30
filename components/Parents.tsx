@@ -148,7 +148,7 @@ export default function Parents() {
                   md:text-3xl
                 "
               >
-                Nombre del padre
+                Laura Pérez Muñoz
               </p>
 
               <p
@@ -158,7 +158,7 @@ export default function Parents() {
                   md:text-3xl
                 "
               >
-                Nombre de la madre
+                Luis Roberto Ruiz Núñez
               </p>
 
             </div>
@@ -183,7 +183,7 @@ export default function Parents() {
                 text-[#A66A2C]
               "
             >
-              Padres del novio
+              Msdre del novio
             </p>
 
             <div className="space-y-4">
@@ -195,18 +195,10 @@ export default function Parents() {
                   md:text-3xl
                 "
               >
-                Nombre del padre
+                Socorro López Gutiérrez
               </p>
 
-              <p
-                className="
-                  font-serif
-                  text-2xl
-                  md:text-3xl
-                "
-              >
-                Nombre de la madre
-              </p>
+              
 
             </div>
 
