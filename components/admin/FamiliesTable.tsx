@@ -17,6 +17,7 @@ export default function FamiliesTable({
         <tr>
           <th>Código</th>
           <th>Familia</th>
+          <th>Teléfono</th>
           <th>Reservados</th>
           <th>Confirmados</th>
           <th>Estado</th>
@@ -30,6 +31,7 @@ export default function FamiliesTable({
           <tr key={family.id}>
             <td>{family.family_code}</td>
             <td>{family.family_name}</td>
+            <td>{family.phone ?? "-"}</td>
             <td>{family.max_places}</td>
             <td>{family.confirmed_places}</td>
             <td>{family.rsvp_status}</td>

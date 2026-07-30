@@ -12,6 +12,8 @@ export type Family = {
 
   max_places: number;
 
+  phone: string | null;
+
   confirmed_places: number;
 
   rsvp_status: RSVPStatus;

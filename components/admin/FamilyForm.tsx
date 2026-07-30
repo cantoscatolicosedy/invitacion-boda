@@ -23,6 +23,7 @@ export default function FamilyForm({
     family_code: "",
     family_name: "",
     max_places: 0,
+    phone: "",
     confirmed_places: 0,
     rsvp_status: "pending",
     table_number: null,
@@ -43,6 +44,7 @@ rsvp_at: null,
       id: 0,
       family_code: "",
       family_name: "",
+      phone: "",
       max_places: 0,
       confirmed_places: 0,
       rsvp_status: "pending",
@@ -84,6 +86,7 @@ rsvp_at: null,
         max_places: form.max_places,
         confirmed_places: form.confirmed_places,
         rsvp_status: form.rsvp_status,
+        phone: form.phone,
         table_number: form.table_number,
         notes: form.notes,
         checked_in: form.checked_in,
@@ -103,6 +106,7 @@ rsvp_at: null,
         confirmed_places: form.confirmed_places,
         rsvp_status: form.rsvp_status,
         table_number: form.table_number,
+        phone: form.phone,
         notes: form.notes,
         checked_in: form.checked_in,
       })
@@ -144,6 +148,17 @@ rsvp_at: null,
           updateField("family_name", e.target.value)
         }
       />
+
+        <label>Teléfono</label>
+
+<input
+  value={form.phone ?? ""}
+  onChange={(e) =>
+    updateField("phone", e.target.value)
+  }
+  placeholder="6141234567"
+/>
+
 
       <label>Lugares reservados</label>
       <input
