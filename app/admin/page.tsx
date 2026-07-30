@@ -8,6 +8,7 @@ import DashboardCards from "@/components/admin/DashboardCards";
 import SearchBar from "@/components/admin/SearchBar";
 import FamiliesTable from "@/components/admin/FamiliesTable";
 import FamilyModal from "@/components/admin/FamilyModal";
+import { useRouter } from "next/navigation";
 
 
 import type { Family } from "@/types/family";
@@ -19,11 +20,24 @@ export default function AdminPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFamily, setSelectedFamily] = useState<Family | null>(null);
 
-  useEffect(() => {
-    loadFamilies();
+  const router = useRouter();
 
-  
-  }, []);
+ useEffect(() => {
+  async function checkSession() {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    if (!session) {
+      router.push("/login");
+      return;
+    }
+
+    loadFamilies();
+  }
+
+  checkSession();
+}, []);
 
 
  async function handleDelete(family: Family) {
@@ -50,6 +64,11 @@ console.log("Error:", error);
   alert("Familia eliminada correctamente");
 
   loadFamilies();
+}
+
+async function handleLogout() {
+  await supabase.auth.signOut();
+  router.replace("/login");
 }
 
   async function loadFamilies() {
@@ -93,6 +112,14 @@ const pendingFamilies = families.filter(
   return (
     <main style={{ padding: "40px" }}>
       <h1>Panel de Administración</h1>
+
+      <button
+  className="admin-btn"
+  style={{ float: "right" }}
+  onClick={handleLogout}
+>
+  Cerrar sesión
+</button>
 
    <button
   className="admin-btn"
