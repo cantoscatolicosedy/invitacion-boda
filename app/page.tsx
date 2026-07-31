@@ -34,7 +34,6 @@ export default function Home() {
 
 <DressCode />
 
-<RSVP />
 
       <section
         id="historia"

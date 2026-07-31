@@ -14,7 +14,13 @@ type Guest = {
   rsvp_status: RSVPStatus;
 };
 
-export default function RSVP() {
+type RSVPProps = {
+  familyCode: string;
+};
+
+export default function RSVP({
+  familyCode,
+}: RSVPProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const [isVisible, setIsVisible] = useState(false);
@@ -24,21 +30,21 @@ export default function RSVP() {
 
   const [confirmedPlaces, setConfirmedPlaces] = useState(1);
 
-  useEffect(() => {
+
+useEffect(() => {
+  
+
+  console.log("Código recibido:", familyCode);
   const loadGuest = async () => {
-    const params = new URLSearchParams(window.location.search);
-    const guestCode = params.get("invitado");
+  const guestCode = familyCode;
 
-    if (!guestCode) return;
-
-    const { data, error } = await supabase
-      .from("families")
-      .select(
-        "family_code, family_name, max_places, confirmed_places, rsvp_status"
-      )
-      .eq("family_code", guestCode)
-      .single();
-
+  const { data, error } = await supabase
+    .from("families")
+    .select(
+      "family_code, family_name, max_places, confirmed_places, rsvp_status"
+    )
+    .eq("family_code", guestCode)
+    .single();
       console.log("DATA:", data);
       console.log("ERROR:", error);
 

@@ -1,0 +1,32 @@
+import Hero from "@/components/Hero";
+import Parents from "@/components/Parents";
+import Story from "@/components/Story";
+import EventDetails from "@/components/EventDetails";
+import DressCode from "@/components/DressCode";
+import RSVP from "@/components/RSVP";
+
+type Props = {
+  params: Promise<{
+    code: string;
+  }>;
+};
+
+export default async function InvitationPage({ params }: Props) {
+  const { code } = await params;
+
+  return (
+    <main className="bg-[#35152A] text-white">
+      <Hero />
+
+      <Parents />
+
+      <Story />
+
+      <EventDetails />
+
+      <DressCode />
+
+      <RSVP familyCode={code} />
+    </main>
+  );
+}
