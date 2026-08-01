@@ -48,11 +48,11 @@ useEffect(() => {
       console.log("DATA:", data);
       console.log("ERROR:", error);
 
-  if (error) {
-  console.error("Error al cargar la familia:", error);
+ if (error) {
+  alert(error.message);
+  console.error(error);
   return;
 }
-
     if (data) {
       setGuest(data);
       setStatus(data.rsvp_status);

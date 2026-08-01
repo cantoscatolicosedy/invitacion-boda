@@ -75,23 +75,34 @@ export default function FamiliesTable({
   className="admin-btn"
   style={{ marginLeft: "10px", background: "#25D366" }}
   onClick={() => {
-    const phone = `52${family.phone}`;
+  if (!family.phone) {
+    alert("Esta familia no tiene teléfono registrado.");
+    return;
+  }
 
-    const invitationLink =
-      `${window.location.origin}/invitacion/${family.family_code}`;
+  const phone = `52${family.phone}`;
 
-    const message =
-      `Hola ${family.family_name}. 💍✨\n\n` +
-      `Nos llena de alegría invitarlos a celebrar nuestra boda.\n\n` +
-      `Aquí pueden ver su invitación personalizada y confirmar su asistencia:\n\n` +
-      `${invitationLink}\n\n` +
-      `¡Los esperamos con mucho cariño!`;
+  const invitationLink =
+    `${window.location.origin}/invitacion/${family.family_code}`;
 
-    window.open(
-      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
-  }}
+  const message =
+`Hola ${family.family_name}. 👋
+
+Con mucha alegría queremos invitarlos a compartir uno de los días más importantes de nuestra vida. 💍✨
+
+Hemos preparado una invitación personalizada para ustedes:
+
+${invitationLink}
+
+En ella encontrarán todos los detalles del evento y podrán confirmar su asistencia.
+
+¡Será un honor contar con su presencia!`;
+
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+}}
 >
   WhatsApp
 </button>
