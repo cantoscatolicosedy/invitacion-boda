@@ -29,6 +29,7 @@ export default function RSVP({
   const [guest, setGuest] = useState<Guest | null>(null);
 
   const [confirmedPlaces, setConfirmedPlaces] = useState(1);
+  const [notFound, setNotFound] = useState(false);
 
 
 useEffect(() => {
@@ -44,13 +45,13 @@ useEffect(() => {
       "family_code, family_name, max_places, confirmed_places, rsvp_status"
     )
     .eq("family_code", guestCode)
-    .single();
+    .maybeSingle();
       console.log("DATA:", data);
       console.log("ERROR:", error);
 
- if (error) {
-  alert(error.message);
-  console.error(error);
+ if (error || !data) {
+  console.error("Familia no encontrada:", error);
+  setNotFound(true);
   return;
 }
     if (data) {
@@ -108,6 +109,45 @@ useEffect(() => {
 
     return () => observer.disconnect();
   }, []);
+
+
+  if (notFound) {
+  return (
+    <section
+      className="
+        rsvp-section
+        flex
+        items-center
+        justify-center
+      "
+    >
+      <div className="rsvp-container">
+        <div className="rsvp-card">
+
+          <div className="rsvp-card-symbol">
+            ✦
+          </div>
+
+          <h2 className="rsvp-title">
+            Invitación no encontrada
+          </h2>
+
+          <p className="rsvp-intro">
+            Lo sentimos.
+            <br /><br />
+            El enlace que estás utilizando
+            no corresponde a una invitación válida.
+            <br /><br />
+            Si crees que se trata de un error,
+            comunícate con los novios.
+          </p>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
   return (
     <section
