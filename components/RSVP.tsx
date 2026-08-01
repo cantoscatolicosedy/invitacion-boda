@@ -312,19 +312,26 @@ useEffect(() => {
           {/* ================================= */}
 
           {status === "confirmed" && (
-            <div className="rsvp-status-message">
+  <div className="rsvp-status-message">
 
-              <p>
-                ✦ Asistencia confirmada ✦
-              </p>
+    <p>
+      ✦ Asistencia confirmada ✦
+    </p>
 
-              <strong>
-                ¡Qué alegría saber que compartirán
-                este día tan especial con nosotros!
-              </strong>
+    <strong>
+      Confirmaron {confirmedPlaces} de {guest?.max_places}{" "}
+      {guest?.max_places === 1 ? "asistente" : "asistentes"}.
+    </strong>
 
-            </div>
-          )}
+    <br />
+    <br />
+
+    <p>
+      ¡Qué alegría saber que compartirán este día tan especial con nosotros!
+    </p>
+
+  </div>
+)}
 
           {/* ================================= */}
           {/* NO ASISTIRÁ */}
