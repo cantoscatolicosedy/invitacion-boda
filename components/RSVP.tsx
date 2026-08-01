@@ -318,9 +318,13 @@ useEffect(() => {
       ✦ Asistencia confirmada ✦
     </p>
 
+    <p>
+      Su asistencia ha sido registrada correctamente.
+    </p>
+
     <strong>
-      Confirmaron {confirmedPlaces} de {guest?.max_places}{" "}
-      {guest?.max_places === 1 ? "asistente" : "asistentes"}.
+      {confirmedPlaces} de {guest?.max_places}{" "}
+      {guest?.max_places === 1 ? "lugar reservado ha sido confirmado." : "lugares reservados han sido confirmados."}
     </strong>
 
     <br />
