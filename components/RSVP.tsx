@@ -371,11 +371,7 @@ useEffect(() => {
     familyCode={guest.family_code}
     confirmedPlaces={confirmedPlaces}
     maxPlaces={guest.max_places}
-    qrValue={JSON.stringify({
-      code: guest.family_code,
-      family: guest.family_name,
-      places: confirmedPlaces,
-    })}
+    qrValue={guest.family_code}
   />
 )}
 
