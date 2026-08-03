@@ -4,18 +4,23 @@ type QRCodePassProps = {
   value: string;
 };
 
-export default function QRCodePass({
-  value,
-}: QRCodePassProps) {
+export default function QRCodePass({ value }: QRCodePassProps) {
   return (
-    <div className="qr-container">
+    <div
+      style={{
+        background: "#FFFFFF",
+        padding: "20px",
+        borderRadius: "12px",
+        display: "inline-block",
+      }}
+    >
       <QRCode
-  value={value}
-  size={300}
-  bgColor="#FFFFFF"
-  fgColor="#000000"
-  level="M"
-/>
+        value={value}
+        size={220}
+        bgColor="#FFFFFF"
+        fgColor="#000000"
+        level="M"
+      />
     </div>
   );
 }
