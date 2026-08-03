@@ -1,5 +1,8 @@
 "use client";
+import { useState } from "react";
+import QRScanner from "@/components/checkin/QRScanner";
 
+const [qrValue, setQrValue] = useState("");
 export default function CheckInPage() {
   return (
     <main
@@ -39,7 +42,19 @@ export default function CheckInPage() {
         </p>
 
         <div className="mt-10">
-          AQUÍ IRÁ EL LECTOR QR
+          
+          <QRScanner onScan={setQrValue} />
+
+{qrValue && (
+  <div className="mt-6 rounded-xl bg-white/10 p-4">
+    <p className="text-sm text-white/70">
+      Código leído
+    </p>
+
+    <strong>{qrValue}</strong>
+  </div>
+)}
+
         </div>
       </div>
     </main>
