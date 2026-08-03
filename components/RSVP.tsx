@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import GuestCounter from "./rsvp/GuestCounter";
+import AccessPass from "./AccessPass";
 
 type RSVPStatus = "pending" | "confirmed" | "declined";
 
@@ -30,6 +31,8 @@ export default function RSVP({
 
   const [confirmedPlaces, setConfirmedPlaces] = useState(1);
   const [notFound, setNotFound] = useState(false);
+
+  const [showPass, setShowPass] = useState(false);
 
 
 useEffect(() => {
@@ -337,6 +340,8 @@ useEffect(() => {
   </div>
 )}
 
+
+
           {/* ================================= */}
           {/* NO ASISTIRÁ */}
           {/* ================================= */}
@@ -358,6 +363,21 @@ useEffect(() => {
         </div>
 
       </div>
+
+{showPass && guest && (
+  <AccessPass
+  familyName={guest.family_name}
+  familyCode={guest.family_code}
+  confirmedPlaces={confirmedPlaces}
+  maxPlaces={guest.max_places}
+  qrValue={JSON.stringify({
+    code: guest.family_code,
+    family: guest.family_name,
+    places: confirmedPlaces,
+  })}
+/>
+)}
+
 
     </section>
   );
