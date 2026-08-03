@@ -10,12 +10,12 @@ export default function QRCodePass({
   return (
     <div className="qr-container">
       <QRCode
-        value={value}
-        size={180}
-        bgColor="#ffffff"
-        fgColor="#35152A"
-        level="H"
-      />
+  value={value}
+  size={300}
+  bgColor="#FFFFFF"
+  fgColor="#000000"
+  level="M"
+/>
     </div>
   );
 }

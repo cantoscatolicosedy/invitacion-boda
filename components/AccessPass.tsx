@@ -50,6 +50,10 @@ export default function AccessPass({
 
       <div className="pass-divider" />
 
+      <p style={{ color: "white", fontSize: "12px", wordBreak: "break-all" }}>
+  {qrValue}
+</p>
+
       <QRCodePass value={qrValue} />
       <p className="pass-message">
       
