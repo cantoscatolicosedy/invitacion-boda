@@ -22,7 +22,7 @@ export default function AccessPass({
       </p>
 
       <h2 className="pass-title">
-        Clara Iveth  & Salvador
+        Clara Iveth  & Salvador 
       </h2>
 
       <p className="pass-date">
