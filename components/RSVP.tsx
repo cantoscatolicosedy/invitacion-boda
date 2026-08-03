@@ -314,7 +314,7 @@ useEffect(() => {
           {/* CONFIRMADO */}
           {/* ================================= */}
 
-          {status === "confirmed" && (
+{status === "confirmed" && (
   <div className="rsvp-status-message">
 
     <p>
@@ -327,7 +327,9 @@ useEffect(() => {
 
     <strong>
       {confirmedPlaces} de {guest?.max_places}{" "}
-      {guest?.max_places === 1 ? "lugar reservado ha sido confirmado." : "lugares reservados han sido confirmados."}
+      {guest?.max_places === 1
+        ? "lugar reservado ha sido confirmado."
+        : "lugares reservados han sido confirmados."}
     </strong>
 
     <br />
@@ -339,7 +341,6 @@ useEffect(() => {
 
   </div>
 )}
-
 
 
           {/* ================================= */}
