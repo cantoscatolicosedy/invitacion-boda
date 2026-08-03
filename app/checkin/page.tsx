@@ -2,9 +2,10 @@
 import { useState } from "react";
 import QRScanner from "@/components/checkin/QRScanner";
 
-const [qrValue, setQrValue] = useState("");
+
 export default function CheckInPage() {
-  return (
+const [qrValue, setQrValue] = useState("");
+    return (
     <main
       className="
         min-h-screen
