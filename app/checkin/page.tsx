@@ -1,10 +1,39 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import QRScanner from "@/components/checkin/QRScanner";
 
-
+import { supabase } from "@/lib/supabase";
 export default function CheckInPage() {
 const [qrValue, setQrValue] = useState("");
+const [family, setFamily] = useState<any>(null);
+const [loading, setLoading] = useState(false);
+
+
+
+useEffect(() => {
+  if (!qrValue) return;
+
+  const loadFamily = async () => {
+    setLoading(true);
+
+    const { data, error } = await supabase
+      .from("families")
+      .select("*")
+      .eq("family_code", qrValue)
+      .single();
+
+    if (error) {
+      console.error(error);
+      setFamily(null);
+    } else {
+      setFamily(data);
+    }
+
+    setLoading(false);
+  };
+
+  loadFamily();
+}, [qrValue]);
     return (
     <main
       className="
@@ -55,7 +84,27 @@ const [qrValue, setQrValue] = useState("");
     <strong>{qrValue}</strong>
   </div>
 )}
+{family && (
+  <div className="mt-6 rounded-xl bg-green-700/30 p-5 text-left">
 
+    <h2 className="text-2xl font-bold">
+      {family.family_name}
+    </h2>
+
+    <p>
+      Código: <strong>{family.family_code}</strong>
+    </p>
+
+    <p>
+      Confirmados: {family.confirmed_places}
+    </p>
+
+    <p>
+      Estado RSVP: {family.rsvp_status}
+    </p>
+
+  </div>
+)}
         </div>
       </div>
     </main>
