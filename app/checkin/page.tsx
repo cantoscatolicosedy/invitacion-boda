@@ -103,6 +103,53 @@ useEffect(() => {
       Estado RSVP: {family.rsvp_status}
     </p>
 
+    <button
+  className="mt-6 w-full rounded-xl bg-green-600 py-3 font-semibold hover:bg-green-700"
+  onClick={async () => {
+    const { error } = await supabase
+      .from("families")
+      .update({
+        checked_in: true,
+        checked_in_at: new Date().toISOString(),
+      })
+      .eq("family_code", family.family_code);
+
+    if (error) {
+      alert("Error al registrar la entrada.");
+      console.error(error);
+      return;
+    }
+
+    setFamily({
+      ...family,
+      checked_in: true,
+      checked_in_at: new Date().toISOString(),
+    });
+
+    alert("Acceso registrado correctamente.");
+  }}
+>
+  Registrar Entrada
+</button>
+
+{family.checked_in && (
+  <div className="mt-6 rounded-xl bg-green-600/20 border border-green-500 p-4">
+
+    <h3 className="text-xl font-bold text-green-300">
+      ✅ Acceso autorizado
+    </h3>
+
+    <p className="mt-2">
+      Este pase ya fue registrado.
+    </p>
+
+    <p className="text-sm text-white/70">
+      {new Date(family.checked_in_at).toLocaleString()}
+    </p>
+
+  </div>
+)}
+
   </div>
 )}
         </div>
