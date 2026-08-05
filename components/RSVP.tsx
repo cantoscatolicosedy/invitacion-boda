@@ -334,6 +334,11 @@ useEffect(() => {
         ? "lugar reservado ha sido confirmado."
         : "lugares reservados han sido confirmados."}
     </strong>
+    <p className="mt-4 text-lg">
+  <strong>
+    Mesa: {guest?.table_number ?? "Por asignar"}
+  </strong>
+</p>
 
     <br />
     <br />
