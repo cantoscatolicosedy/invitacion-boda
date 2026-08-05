@@ -132,21 +132,50 @@ useEffect(() => {
   Registrar Entrada
 </button>
 
-{family.checked_in && (
-  <div className="mt-6 rounded-xl bg-green-600/20 border border-green-500 p-4">
+{!family.checked_in ? (
+  <button
+    className="mt-6 w-full rounded-xl bg-green-600 py-3 font-semibold hover:bg-green-700"
+    onClick={async () => {
+      const now = new Date().toISOString();
 
-    <h3 className="text-xl font-bold text-green-300">
-      ✅ Acceso autorizado
+      const { error } = await supabase
+        .from("families")
+        .update({
+          checked_in: true,
+          checked_in_at: now,
+        })
+        .eq("family_code", family.family_code);
+
+      if (error) {
+        alert("Error al registrar la entrada.");
+        console.error(error);
+        return;
+      }
+
+      setFamily({
+        ...family,
+        checked_in: true,
+        checked_in_at: now,
+      });
+    }}
+  >
+    Registrar Entrada
+  </button>
+) : (
+  <div className="mt-6 rounded-xl border border-red-500 bg-red-500/20 p-5">
+    <h3 className="text-2xl font-bold text-red-300">
+      ⚠ Pase ya utilizado
     </h3>
 
     <p className="mt-2">
-      Este pase ya fue registrado.
+      Esta familia ya ingresó al evento.
     </p>
 
-    <p className="text-sm text-white/70">
+    <p className="mt-2 text-sm text-white/70">
+      Hora de ingreso:
+      <br />
       {new Date(family.checked_in_at).toLocaleString()}
     </p>
-
   </div>
 )}
 
