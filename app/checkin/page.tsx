@@ -83,10 +83,7 @@ useEffect(() => {
       {family.family_name}
     </h2>
 
-    <p>
-      Código: <strong>{family.family_code}</strong>
-    </p>
-
+    
    <p>
   Código: <strong>{family.family_code}</strong>
 </p>
