@@ -100,6 +100,10 @@ useEffect(() => {
     </p>
 
     <p>
+  Mesa: <strong>{family.table_number}</strong>
+</p>
+
+    <p>
       Estado RSVP: {family.rsvp_status}
     </p>
 
