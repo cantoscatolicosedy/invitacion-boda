@@ -75,15 +75,7 @@ useEffect(() => {
           
           <QRScanner onScan={setQrValue} />
 
-{qrValue && (
-  <div className="mt-6 rounded-xl bg-white/10 p-4">
-    <p className="text-sm text-white/70">
-      Código leído
-    </p>
 
-    <strong>{qrValue}</strong>
-  </div>
-)}
 {family && (
   <div className="mt-6 rounded-xl bg-green-700/30 p-5 text-left">
 
