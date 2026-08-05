@@ -5,6 +5,7 @@ type AccessPassProps = {
   confirmedPlaces: number;
   maxPlaces: number;
   qrValue: string;
+   tableNumber: number | null;
 };
 
 export default function AccessPass({
@@ -13,6 +14,7 @@ export default function AccessPass({
   confirmedPlaces,
   maxPlaces,
   qrValue,
+   tableNumber,
 }: AccessPassProps){
   return (
     <div className="access-pass">
@@ -47,6 +49,11 @@ export default function AccessPass({
           {confirmedPlaces} de {maxPlaces}
         </strong>
       </p>
+
+      <p className="pass-info">
+  Mesa:
+  <strong> {tableNumber ?? "Por asignar"}</strong>
+</p>
 
       <div className="pass-divider" />
 

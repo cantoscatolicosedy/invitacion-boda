@@ -13,6 +13,7 @@ type Guest = {
   max_places: number;
   confirmed_places: number;
   rsvp_status: RSVPStatus;
+   table_number: number | null;
 };
 
 type RSVPProps = {
@@ -45,8 +46,10 @@ useEffect(() => {
   const { data, error } = await supabase
     .from("families")
     .select(
-      "family_code, family_name, max_places, confirmed_places, rsvp_status"
-    )
+      
+  "family_code, family_name, max_places, confirmed_places, rsvp_status, table_number"
+)
+    
     .eq("family_code", guestCode)
     .maybeSingle();
       console.log("DATA:", data);
@@ -372,6 +375,7 @@ useEffect(() => {
     confirmedPlaces={confirmedPlaces}
     maxPlaces={guest.max_places}
     qrValue={guest.family_code}
+     tableNumber={guest.table_number}
   />
 )}
 
