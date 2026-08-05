@@ -95,47 +95,30 @@ useEffect(() => {
       Código: <strong>{family.family_code}</strong>
     </p>
 
-    <p>
-      Confirmados: {family.confirmed_places}
-    </p>
+   <p>
+  Código: <strong>{family.family_code}</strong>
+</p>
 
-    <p>
+<p>
+  Confirmados: <strong>{family.confirmed_places}</strong>
+</p>
+
+<p>
   Mesa: <strong>{family.table_number}</strong>
 </p>
 
-    <p>
-      Estado RSVP: {family.rsvp_status}
-    </p>
+<p>
+  Estado:
+  <strong>
+    {family.rsvp_status === "confirmed"
+      ? " Confirmado"
+      : family.rsvp_status === "declined"
+      ? " No asistirá"
+      : " Pendiente"}
+  </strong>
+</p>
 
-    <button
-  className="mt-6 w-full rounded-xl bg-green-600 py-3 font-semibold hover:bg-green-700"
-  onClick={async () => {
-    const { error } = await supabase
-      .from("families")
-      .update({
-        checked_in: true,
-        checked_in_at: new Date().toISOString(),
-      })
-      .eq("family_code", family.family_code);
-
-    if (error) {
-      alert("Error al registrar la entrada.");
-      console.error(error);
-      return;
-    }
-
-    setFamily({
-      ...family,
-      checked_in: true,
-      checked_in_at: new Date().toISOString(),
-    });
-
-    alert("Acceso registrado correctamente.");
-  }}
->
-  Registrar Entrada
-</button>
-
+   
 {!family.checked_in ? (
   <button
     className="mt-6 w-full rounded-xl bg-green-600 py-3 font-semibold hover:bg-green-700"
