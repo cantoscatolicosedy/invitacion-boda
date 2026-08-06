@@ -175,12 +175,12 @@ export default function Hero() {
           <div
             className="
               bride-name-premium
-              font-serif
-              text-5xl
-              leading-tight
+              font-alex
+              text-6xl
+              leading-none
               drop-shadow-2xl
-              md:text-7xl
-              lg:text-8xl
+              md:text-8xl
+              lg:text-9xl
             "
           >
             Clara Iveth
@@ -206,13 +206,13 @@ export default function Hero() {
 
           <div
             className="
-              groom-name-premium
-              font-serif
-              text-5xl
-              leading-tight
+               groom-name-premium
+              font-alex
+              text-6xl
+              leading-none
               drop-shadow-2xl
-              md:text-7xl
-              lg:text-8xl
+              md:text-8xl
+              lg:text-9xl
             "
           >
             Salvador
