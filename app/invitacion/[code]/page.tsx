@@ -6,6 +6,7 @@ import DressCode from "@/components/DressCode";
 import RSVP from "@/components/RSVP";
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
+import MusicPlayer from "@/components/MusicPlayer";
 
 
 type Props = {
@@ -39,6 +40,8 @@ if (!data) {
       <DressCode />
 
       <RSVP familyCode={code} />
+
+      <MusicPlayer />
     </main>
   );
 }
