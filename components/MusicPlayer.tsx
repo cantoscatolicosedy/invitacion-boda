@@ -69,7 +69,7 @@ export default function MusicPlayer() {
     <>
       <audio
         ref={audioRef}
-        src="/music/perfect.mp3"
+        src="/music/musica.mp3"
         loop
       />
 
