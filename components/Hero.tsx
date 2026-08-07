@@ -275,23 +275,62 @@ export default function Hero() {
         {/* ================================= */}
 
         <button
-          onClick={scrollToStory}
-          className="
-            button-premium
-            premium-button
-            mt-12
-            border
-            border-white/50
-            px-8
-            py-4
-            text-[10px]
-            uppercase
-            tracking-[0.35em]
-            backdrop-blur-sm
-          "
-        >
-          Descubrir nuestra historia
-        </button>
+  onClick={scrollToStory}
+  className="
+    button-premium
+    premium-button
+    group
+    relative
+    mt-12
+    overflow-hidden
+    border
+    border-[#F4B400]/70
+    bg-[#35152A]/30
+    px-10
+    py-4
+    text-[10px]
+    uppercase
+    tracking-[0.35em]
+    text-[#FFF8ED]
+    backdrop-blur-md
+    transition-all
+    duration-500
+    hover:border-[#F4B400]
+    hover:bg-[#F4B400]/10
+  "
+>
+  <span className="relative z-10">
+    Descubrir nuestra historia
+  </span>
+
+  {/* Brillo dorado */}
+
+  <span
+    className="
+      absolute
+      inset-y-0
+      -left-full
+      w-1/2
+      bg-gradient-to-r
+      from-transparent
+      via-[#F4B400]/20
+      to-transparent
+      transition-all
+      duration-700
+      group-hover:left-full
+    "
+  />
+
+  {/* Detalles ornamentales */}
+
+  <span className="absolute left-2 top-2 h-1.5 w-1.5 border-l border-t border-[#F4B400]/70" />
+
+  <span className="absolute right-2 top-2 h-1.5 w-1.5 border-r border-t border-[#F4B400]/70" />
+
+  <span className="absolute bottom-2 left-2 h-1.5 w-1.5 border-b border-l border-[#F4B400]/70" />
+
+  <span className="absolute bottom-2 right-2 h-1.5 w-1.5 border-b border-r border-[#F4B400]/70" />
+</button>
 
         {/* ================================= */}
         {/* INDICADOR */}
