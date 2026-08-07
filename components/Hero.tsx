@@ -148,26 +148,7 @@ export default function Hero() {
         {/* ================================= */}
 
        {/* ================================= */}
-{/* LOGOTIPO C & S */}
-{/* ================================= */}
 
-<div className="monogram-premium">
-
-  <div className="monogram-frame">
-
-    <span className="monogram-letter">C</span>
-
-    <span className="monogram-ampersand">&</span>
-
-    <span className="monogram-letter">S</span>
-
-  </div>
-
-  <div className="monogram-ornament">
-    ✦
-  </div>
-
-</div>
 
         {/* ================================= */}
         {/* NOMBRES */}
@@ -224,6 +205,35 @@ export default function Hero() {
           </div>
 
         </div>
+
+        {/* ================================= */}
+{/* MONOGRAMA C & S */}
+{/* ================================= */}
+
+<div className="monogram-premium">
+
+  <div className="monogram-frame">
+
+    <span className="monogram-letter">
+      C
+    </span>
+
+    <span className="monogram-ampersand">
+      &
+    </span>
+
+    <span className="monogram-letter">
+      S
+    </span>
+
+  </div>
+
+  <div className="monogram-ornament">
+    ✦
+  </div>
+
+</div>
+
 
         {/* ================================= */}
         {/* LÍNEA DORADA */}
