@@ -108,8 +108,8 @@ function CountdownBox({
         countdown-box-premium
         relative
         flex
-        h-[72px]
-        w-[82px]
+        h-[78px]
+        w-[86px]
         flex-col
         items-center
         justify-center
@@ -117,10 +117,10 @@ function CountdownBox({
         border-[#F4B400]/50
         bg-[#35152a]/25
         backdrop-blur-sm
-        sm:h-[78px]
-        sm:w-[88px]
-        md:h-[84px]
-        md:w-[94px]
+        sm:h-[82px]
+        sm:w-[92px]
+        md:h-[86px]
+        md:w-[96px]
       "
     >
 
