@@ -346,6 +346,32 @@ export default function Story() {
         }}
       />
 
+        
+
+
+                  <div
+            className="
+              pointer-events-none
+              absolute
+              inset-x-0
+              top-0
+              h-[420px]
+              bg-contain
+              bg-top
+              bg-no-repeat
+              opacity-[0.045]
+            "
+            style={{
+              backgroundImage:
+                "url('/images/flores-mexicanas.png')",
+            }}
+          />
+
+
+
+
+
+
       {/* Velo para suavizar las flores */}
       <div
         className="
