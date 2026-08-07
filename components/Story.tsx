@@ -71,21 +71,27 @@ function StoryItem({
         relative
         grid
         items-center
-        gap-10
+        gap-12
         md:grid-cols-2
         md:gap-20
         ${isVisible ? "story-item-visible" : ""}
       `}
     >
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* FOTO */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
       <div
         className={`
           story-item-image
+          group
+          relative
           overflow-hidden
-          rounded-sm
+          border
+          border-[#D89B2B]/45
+          bg-[#35152A]
+          p-1
+          shadow-[0_20px_60px_rgba(0,0,0,0.25)]
           ${
             isEven
               ? "md:col-start-1"
@@ -93,25 +99,100 @@ function StoryItem({
           }
         `}
       >
-        <img
-          src={item.image}
-          alt={item.title}
-          className="
-            h-[320px]
-            w-full
-            object-cover
-            object-top
-            transition-transform
-            duration-1000
-            hover:scale-105
-            md:h-[450px]
-          "
-        />
+        {/* Marco interior */}
+        <div className="relative overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="
+              h-[320px]
+              w-full
+              object-cover
+              object-center
+              transition-transform
+              duration-[1400ms]
+              ease-out
+              group-hover:scale-105
+              md:h-[450px]
+            "
+          />
+
+          {/* Overlay elegante */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-[#35152A]/35
+              via-transparent
+              to-white/5
+              opacity-70
+            "
+          />
+
+          {/* Esquinas ornamentales */}
+          <span
+            className="
+              pointer-events-none
+              absolute
+              left-3
+              top-3
+              h-8
+              w-8
+              border-l
+              border-t
+              border-[#F4B400]/70
+            "
+          />
+
+          <span
+            className="
+              pointer-events-none
+              absolute
+              right-3
+              top-3
+              h-8
+              w-8
+              border-r
+              border-t
+              border-[#F4B400]/70
+            "
+          />
+
+          <span
+            className="
+              pointer-events-none
+              absolute
+              bottom-3
+              left-3
+              h-8
+              w-8
+              border-b
+              border-l
+              border-[#F4B400]/70
+            "
+          />
+
+          <span
+            className="
+              pointer-events-none
+              absolute
+              bottom-3
+              right-3
+              h-8
+              w-8
+              border-b
+              border-r
+              border-[#F4B400]/70
+            "
+          />
+        </div>
       </div>
 
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* CONTENIDO */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
       <div
         className={`
@@ -123,36 +204,86 @@ function StoryItem({
           }
         `}
       >
-        <span className="mb-4 block text-sm tracking-[0.3em] text-[#F4B400]">
-          {item.number}
-        </span>
+        {/* Número */}
+        <div
+          className={`
+            mb-5
+            flex
+            items-center
+            gap-4
+            ${
+              isEven
+                ? "md:justify-start"
+                : "md:justify-end"
+            }
+          `}
+        >
+          <span className="text-[11px] uppercase tracking-[0.45em] text-[#F4B400]/80">
+            Capítulo
+          </span>
 
-        <h3 className="font-serif text-4xl md:text-5xl">
+          <span
+            className="
+              font-serif
+              text-2xl
+              leading-none
+              text-[#F4B400]
+            "
+          >
+            {item.number}
+          </span>
+        </div>
+
+        {/* Título */}
+        <h3
+          className="
+            font-serif
+            text-4xl
+            leading-tight
+            text-[#FFF8ED]
+            md:text-5xl
+          "
+        >
           {item.title}
         </h3>
 
+        {/* Línea decorativa */}
         <div
           className={`
             my-6
-            h-px
-            w-16
-            bg-[#F4B400]
+            flex
+            items-center
+            gap-3
             ${
               isEven
-                ? "md:mr-auto"
-                : "md:ml-auto"
+                ? "md:justify-start"
+                : "md:justify-end"
             }
           `}
-        />
+        >
+          <span className="h-px w-16 bg-[#F4B400]" />
 
-        <p className="text-base leading-relaxed text-white/65 md:text-lg">
+          <span className="text-xs text-[#F4B400]">
+            ✦
+          </span>
+        </div>
+
+        {/* Texto */}
+        <p
+          className="
+            text-base
+            leading-[1.9]
+            text-white/65
+            md:text-lg
+          "
+        >
           {item.text}
         </p>
       </div>
 
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* PUNTO CENTRAL */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
       <div
         className="
@@ -161,17 +292,22 @@ function StoryItem({
           left-1/2
           top-1/2
           hidden
-          h-4
-          w-4
+          h-5
+          w-5
           -translate-x-1/2
           -translate-y-1/2
+          items-center
+          justify-center
           rounded-full
           border
           border-[#F4B400]
           bg-[#35152A]
-          md:block
+          shadow-[0_0_0_5px_rgba(53,21,42,0.9)]
+          md:flex
         "
-      />
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-[#F4B400]" />
+      </div>
     </article>
   );
 }
@@ -181,18 +317,18 @@ export default function Story() {
     <section
       id="historia"
       className="
-        story-section
         relative
         overflow-hidden
         bg-[#35152A]
         px-6
-        py-32
-        text-white
+        py-28
+        text-[#FFF8ED]
+        md:py-36
       "
     >
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* DECORACIÓN FLORAL */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
       <div
         className="
@@ -202,7 +338,7 @@ export default function Story() {
           bg-contain
           bg-center
           bg-no-repeat
-          opacity-[0.06]
+          opacity-[0.09]
         "
         style={{
           backgroundImage:
@@ -210,38 +346,76 @@ export default function Story() {
         }}
       />
 
-      {/* ================================= */}
+      {/* Velo para suavizar las flores */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[#35152A]/20
+        "
+      />
+
+      {/* ================================================= */}
       {/* ENCABEZADO */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
-
-        <p className="mb-6 text-xs uppercase tracking-[0.5em] text-[#F4B400]">
+        <p
+          className="
+            mb-5
+            text-[10px]
+            uppercase
+            tracking-[0.5em]
+            text-[#F4B400]
+            md:text-xs
+          "
+        >
           Nuestra historia
         </p>
 
-        <h2 className="font-serif text-5xl md:text-7xl">
+        <h2
+          className="
+            font-serif
+            text-5xl
+            leading-tight
+            text-[#FFF8ED]
+            md:text-7xl
+          "
+        >
           Una historia que apenas comienza
         </h2>
 
-        <div className="mx-auto my-10 h-px w-24 bg-[#F4B400]" />
+        <div className="mx-auto my-8 flex items-center justify-center gap-3">
+          <span className="h-px w-12 bg-[#F4B400]/70" />
+          <span className="text-sm text-[#F4B400]">
+            ✦
+          </span>
+          <span className="h-px w-12 bg-[#F4B400]/70" />
+        </div>
 
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
+        <p
+          className="
+            mx-auto
+            max-w-2xl
+            text-base
+            leading-relaxed
+            text-white/65
+            md:text-xl
+          "
+        >
           Hay historias que comienzan de manera inesperada,
           pero que poco a poco se convierten en el lugar
           al que siempre queremos regresar.
         </p>
-
       </div>
 
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* LÍNEA DE TIEMPO */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
-      <div className="relative z-10 mx-auto mt-32 max-w-5xl">
-
+      <div className="relative z-10 mx-auto mt-28 max-w-5xl md:mt-36">
         {/* Línea central */}
-
         <div
           className="
             absolute
@@ -251,15 +425,16 @@ export default function Story() {
             h-full
             w-px
             -translate-x-1/2
-            bg-white/20
+            bg-gradient-to-b
+            from-transparent
+            via-[#D89B2B]/50
+            to-transparent
             md:block
           "
         />
 
         {/* Historias */}
-
-        <div className="space-y-24 md:space-y-48">
-
+        <div className="space-y-24 md:space-y-44">
           {storyItems.map((item, index) => (
             <StoryItem
               key={item.number}
@@ -267,28 +442,48 @@ export default function Story() {
               index={index}
             />
           ))}
-
         </div>
-
       </div>
 
-      {/* ================================= */}
+      {/* ================================================= */}
       {/* CIERRE */}
-      {/* ================================= */}
+      {/* ================================================= */}
 
-      <div className="relative z-10 mx-auto mt-32 max-w-3xl text-center md:mt-40">
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          mt-28
+          max-w-3xl
+          text-center
+          md:mt-40
+        "
+      >
+        <div className="mb-8 flex items-center justify-center gap-4">
+          <span className="h-px w-12 bg-[#F4B400]/60" />
 
-        <div className="mb-8 text-3xl text-[#F4B400]">
-          ✦
+          <span className="text-2xl text-[#F4B400]">
+            ✦
+          </span>
+
+          <span className="h-px w-12 bg-[#F4B400]/60" />
         </div>
 
-        <p className="font-serif text-3xl italic leading-relaxed md:text-4xl">
+        <p
+          className="
+            font-serif
+            text-3xl
+            italic
+            leading-relaxed
+            text-[#FFF8ED]
+            md:text-4xl
+          "
+        >
           Y queremos comenzar este nuevo capítulo
           rodeados de las personas que más queremos.
         </p>
-
       </div>
-
     </section>
   );
 }
