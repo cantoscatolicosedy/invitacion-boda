@@ -109,7 +109,7 @@ function CountdownBox({
         relative
         flex
         h-[72px]
-        w-[72px]
+        w-[82px]
         flex-col
         items-center
         justify-center
@@ -118,9 +118,9 @@ function CountdownBox({
         bg-[#35152a]/25
         backdrop-blur-sm
         sm:h-[78px]
-        sm:w-[78px]
+        sm:w-[88px]
         md:h-[84px]
-        md:w-[84px]
+        md:w-[94px]
       "
     >
 
