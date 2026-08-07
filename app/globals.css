@@ -2590,3 +2590,107 @@ body {
   font-family: var(--font-alex-brush), cursive;
 }
 
+
+/* =========================================
+   MONOGRAMA C & S
+========================================= */
+
+.monogram-premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.monogram-frame {
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  border: 1px solid rgba(244, 180, 0, 0.75);
+  border-radius: 50%;
+
+  position: relative;
+
+  box-shadow:
+    0 0 0 5px rgba(244, 180, 0, 0.08),
+    0 0 20px rgba(244, 180, 0, 0.12);
+}
+
+.monogram-frame::before,
+.monogram-frame::after {
+  content: "";
+  position: absolute;
+
+  width: 34px;
+  height: 1px;
+
+  background: #f4b400;
+}
+
+.monogram-frame::before {
+  left: -42px;
+}
+
+.monogram-frame::after {
+  right: -42px;
+}
+
+.monogram-letter {
+  font-family: var(--font-alex-brush), cursive;
+  color: #fffaf0;
+
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.monogram-ampersand {
+  font-family: var(--font-cormorant), serif;
+
+  color: #f4b400;
+
+  font-size: 1.15rem;
+  font-style: italic;
+
+  margin-top: 8px;
+}
+
+.monogram-ornament {
+  color: #f4b400;
+
+  font-size: 0.75rem;
+
+  margin-top: 7px;
+
+  letter-spacing: 0.3em;
+}
+
+@media (max-width: 640px) {
+  .monogram-frame {
+    width: 76px;
+    height: 76px;
+  }
+
+  .monogram-letter {
+    font-size: 2.2rem;
+  }
+
+  .monogram-frame::before,
+  .monogram-frame::after {
+    width: 25px;
+  }
+
+  .monogram-frame::before {
+    left: -31px;
+  }
+
+  .monogram-frame::after {
+    right: -31px;
+  }
+}

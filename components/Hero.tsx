@@ -147,22 +147,27 @@ export default function Hero() {
         {/* TÍTULO */}
         {/* ================================= */}
 
-        <div className="title-premium">
+       {/* ================================= */}
+{/* LOGOTIPO C & S */}
+{/* ================================= */}
 
-          <p
-            className="
-              mb-8
-              text-[10px]
-              uppercase
-              tracking-[0.6em]
-              text-white/80
-              md:text-xs
-            "
-          >
-            Nuestra boda
-          </p>
+<div className="monogram-premium">
 
-        </div>
+  <div className="monogram-frame">
+
+    <span className="monogram-letter">C</span>
+
+    <span className="monogram-ampersand">&</span>
+
+    <span className="monogram-letter">S</span>
+
+  </div>
+
+  <div className="monogram-ornament">
+    ✦
+  </div>
+
+</div>
 
         {/* ================================= */}
         {/* NOMBRES */}
@@ -191,12 +196,12 @@ export default function Hero() {
           <div
             className="
               ampersand-premium
-              my-3
+              my-4
               font-serif
-              text-2xl
+              text-3xl
               italic
               text-[#F4B400]
-              md:text-4xl
+              md:text-5xl
             "
           >
             &
