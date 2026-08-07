@@ -336,7 +336,7 @@ export default function Story() {
           absolute
           inset-0
           bg-contain
-          bg-center
+          bg-[center_top]
           bg-no-repeat
           opacity-[0.09]
         "
