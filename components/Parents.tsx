@@ -57,7 +57,7 @@ export default function Parents() {
           bg-contain
           bg-center
           bg-no-repeat
-          opacity-[0.12]
+          opacity-[0.18]
         "
         style={{
           backgroundImage:
@@ -183,7 +183,7 @@ export default function Parents() {
                 text-[#A66A2C]
               "
             >
-              Msdre del novio
+              Madre del novio
             </p>
 
             <div className="space-y-4">
@@ -224,7 +224,7 @@ export default function Parents() {
               text-xl
               italic
               leading-relaxed
-              text-[#35152A]/70
+              text-[#35152A]/80
               md:text-2xl
             "
           >
