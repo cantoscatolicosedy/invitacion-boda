@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const weddingDate = new Date("2026-12-20T18:00:00");
+const weddingDate = new Date("2027-07-16T16:00:00");
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -32,12 +32,15 @@ export default function Countdown() {
         days: Math.floor(
           difference / (1000 * 60 * 60 * 24)
         ),
+
         hours: Math.floor(
           (difference / (1000 * 60 * 60)) % 24
         ),
+
         minutes: Math.floor(
           (difference / (1000 * 60)) % 60
         ),
+
         seconds: Math.floor(
           (difference / 1000) % 60
         ),
@@ -58,13 +61,16 @@ export default function Countdown() {
     <div
       className="
         countdown-premium
-        mt-10
-        grid
-        grid-cols-4
+        mt-8
+        flex
+        items-center
+        justify-center
         gap-2
-        sm:gap-4
+        sm:gap-3
+        md:gap-4
       "
     >
+
       <CountdownBox
         value={timeLeft.days}
         label="Días"
@@ -84,6 +90,7 @@ export default function Countdown() {
         value={timeLeft.seconds}
         label="Seg"
       />
+
     </div>
   );
 }
@@ -98,38 +105,62 @@ function CountdownBox({
   return (
     <div
       className="
-        min-w-[65px]
+        countdown-box-premium
+        relative
+        flex
+        h-[72px]
+        w-[72px]
+        flex-col
+        items-center
+        justify-center
         border
-        border-white/20
-        bg-black/20
-        px-3
-        py-3
-        backdrop-blur-md
-        sm:min-w-[80px]
+        border-[#F4B400]/50
+        bg-[#35152a]/25
+        backdrop-blur-sm
+        sm:h-[78px]
+        sm:w-[78px]
+        md:h-[84px]
+        md:w-[84px]
       "
     >
+
+      {/* ESQUINAS ORNAMENTALES */}
+
+      <span className="countdown-corner countdown-corner-tl" />
+      <span className="countdown-corner countdown-corner-tr" />
+      <span className="countdown-corner countdown-corner-bl" />
+      <span className="countdown-corner countdown-corner-br" />
+
+      {/* NÚMERO */}
+
       <span
         className="
-          block
-          text-xl
-          font-semibold
-          sm:text-2xl
+          font-cormorant
+          text-2xl
+          leading-none
+          text-[#FFF8ED]
+          sm:text-3xl
+          md:text-4xl
         "
       >
         {String(value).padStart(2, "0")}
       </span>
 
+      {/* ETIQUETA */}
+
       <span
         className="
-          text-[9px]
+          mt-2
+          text-[8px]
           uppercase
-          tracking-[0.2em]
-          text-white/60
-          sm:text-[10px]
+          tracking-[0.22em]
+          text-[#F4B400]/80
+          sm:text-[9px]
         "
       >
         {label}
       </span>
+
     </div>
   );
 }
