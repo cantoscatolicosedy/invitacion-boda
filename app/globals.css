@@ -2591,8 +2591,9 @@ body {
 }
 
 
+
 /* =========================================
-   MONOGRAMA C & S
+   MONOGRAMA C & S — PREMIUM
 ========================================= */
 
 .monogram-premium {
@@ -2600,53 +2601,58 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .monogram-frame {
-  width: 92px;
-  height: 92px;
+  width: 112px;
+  height: 112px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 2px;
-
-  border: 1px solid rgba(244, 180, 0, 0.75);
-  border-radius: 50%;
+  gap: 3px;
 
   position: relative;
 
+  border: 1px solid rgba(244, 180, 0, 0.85);
+  border-radius: 50%;
+
+  background: rgba(35, 8, 20, 0.12);
+
   box-shadow:
-    0 0 0 5px rgba(244, 180, 0, 0.08),
-    0 0 20px rgba(244, 180, 0, 0.12);
+    0 0 0 5px rgba(244, 180, 0, 0.06),
+    0 0 25px rgba(244, 180, 0, 0.14);
 }
 
 .monogram-frame::before,
 .monogram-frame::after {
   content: "";
+
   position: absolute;
 
-  width: 34px;
+  width: 42px;
   height: 1px;
 
   background: #f4b400;
 }
 
 .monogram-frame::before {
-  left: -42px;
+  left: -52px;
 }
 
 .monogram-frame::after {
-  right: -42px;
+  right: -52px;
 }
 
 .monogram-letter {
   font-family: var(--font-alex-brush), cursive;
+
   color: #fffaf0;
 
-  font-size: 2.6rem;
+  font-size: 3.4rem;
   line-height: 1;
 }
 
@@ -2655,30 +2661,40 @@ body {
 
   color: #f4b400;
 
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-style: italic;
 
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-left: 2px;
 }
 
 .monogram-ornament {
   color: #f4b400;
 
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 
-  margin-top: 7px;
+  margin-top: 8px;
 
   letter-spacing: 0.3em;
 }
 
 @media (max-width: 640px) {
+
+  .monogram-premium {
+    margin-bottom: 1.25rem;
+  }
+
   .monogram-frame {
-    width: 76px;
-    height: 76px;
+    width: 86px;
+    height: 86px;
   }
 
   .monogram-letter {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+  }
+
+  .monogram-ampersand {
+    font-size: 1rem;
   }
 
   .monogram-frame::before,
