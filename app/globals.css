@@ -3464,7 +3464,7 @@ body {
 .gift-registry-title {
   margin: 0;
 
-  color: #35152a;
+   color: #f5eadf;
 
   font-family: Georgia, "Times New Roman", serif;
 
@@ -3502,7 +3502,7 @@ body {
   max-width: 650px;
   margin: 0 auto;
 
-  color: #806d76;
+  color: rgba(245, 234, 223, 0.72);
 
   font-size: 15px;
   line-height: 1.9;
@@ -3559,7 +3559,7 @@ body {
   top: 25px;
   left: 30px;
 
-  color: rgba(53, 21, 42, 0.35);
+  color: rgba(245, 234, 223, 0.45);
 
   font-size: 10px;
   letter-spacing: 3px;
@@ -3599,7 +3599,7 @@ body {
 .gift-card-title {
   margin: 0 0 18px;
 
-  color: #35152a;
+  color: #f5eadf;
 
   font-family: Georgia, "Times New Roman", serif;
 
@@ -3612,7 +3612,7 @@ body {
 
   margin: 0 auto 30px;
 
-  color: #806d76;
+  color: rgba(245, 234, 223, 0.72);
 
   font-size: 14px;
   line-height: 1.8;
@@ -3633,9 +3633,9 @@ body {
 
   padding: 15px 22px;
 
-  color: #35152a;
+  color: #f5eadf;
 
-  border: 1px solid rgba(53, 21, 42, 0.35);
+  border: 1px solid rgba(245, 234, 223, 0.35);
 
   text-decoration: none;
 
@@ -3684,7 +3684,7 @@ body {
 .gift-registry-footer p {
   margin: 0;
 
-  color: #35152a;
+  color: #f5eadf;
 
   font-family: Georgia, "Times New Roman", serif;
 
