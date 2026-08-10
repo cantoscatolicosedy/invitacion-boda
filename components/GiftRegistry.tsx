@@ -63,41 +63,61 @@ function GiftCard({
         transitionDelay: `${index * 150}ms`,
       }}
     >
-      {/* Número */}
+{/* Número */}
 
-      <span className="gift-card-number">
-        {gift.number}
-      </span>
+<span className="gift-card-number">
+  {gift.number}
+</span>
 
-      {/* Símbolo */}
+{/* Marco decorativo */}
 
-      <div className="gift-card-symbol">
-        ✦
-      </div>
+<div className="gift-card-frame" />
 
-      {/* Nombre */}
+{/* Contenido */}
 
-      <h3 className="gift-card-title">
-        {gift.title}
-      </h3>
+<div className="gift-card-inner">
 
-      {/* Descripción */}
+  {/* Símbolo */}
 
-      <p className="gift-card-description">
-        {gift.description}
-      </p>
+  <div className="gift-card-symbol">
+    ✦
+  </div>
 
-      {/* Botón */}
+  {/* Etiqueta */}
 
-      <a
-        href={gift.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="gift-card-button"
-      >
-        <span>{gift.button}</span>
-        <span className="gift-card-arrow">↗</span>
-      </a>
+  <p className="gift-card-label">
+    Mesa de regalos
+  </p>
+
+  {/* Nombre */}
+
+  <h3 className="gift-card-title">
+    {gift.title}
+  </h3>
+
+  {/* Línea */}
+
+  <div className="gift-card-line" />
+
+  {/* Descripción */}
+
+  <p className="gift-card-description">
+    {gift.description}
+  </p>
+
+  {/* Botón */}
+
+  <a
+    href={gift.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="gift-card-button"
+  >
+    <span>{gift.button}</span>
+    <span className="gift-card-arrow">↗</span>
+  </a>
+
+</div>
     </div>
   );
 }
