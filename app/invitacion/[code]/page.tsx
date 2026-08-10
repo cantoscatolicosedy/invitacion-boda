@@ -3,6 +3,7 @@ import Parents from "@/components/Parents";
 import Story from "@/components/Story";
 import EventDetails from "@/components/EventDetails";
 import DressCode from "@/components/DressCode";
+import GiftRegistry from "@/components/GiftRegistry";
 import RSVP from "@/components/RSVP";
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
@@ -38,6 +39,8 @@ if (!data) {
       <EventDetails />
 
       <DressCode />
+
+      <GiftRegistry />
 
       <RSVP familyCode={code} />
 
