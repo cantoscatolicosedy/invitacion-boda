@@ -3,6 +3,7 @@ import Parents from "@/components/Parents";
 import Story from "@/components/Story";
 import EventDetails from "@/components/EventDetails";
 import DressCode from "@/components/DressCode";
+import GiftRegistry from "@/components/GiftRegistry";
 
 import RSVP from "@/components/RSVP";
 
@@ -130,6 +131,7 @@ export default function Home() {
 
       </section>
 
+          
     </main>
   );
 }
