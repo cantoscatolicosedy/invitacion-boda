@@ -35,7 +35,7 @@ export default function Home() {
 
 <DressCode />
 
-<GiftRegistry />
+
 
       <section
         id="historia"
@@ -131,7 +131,7 @@ export default function Home() {
         </div>
 
       </section>
-
+    <GiftRegistry />
           
     </main>
   );
