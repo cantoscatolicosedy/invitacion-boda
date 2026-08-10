@@ -3556,6 +3556,33 @@ body {
   overflow: hidden;
 }
 
+/* =========================================
+   BRILLO PREMIUM
+========================================= */
+
+.gift-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(216, 155, 22, 0.07) 0%,
+    rgba(216, 155, 22, 0.025) 35%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
 .gift-card:hover {
   background: rgba(255, 255, 255, 0.045);
 
