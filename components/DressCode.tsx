@@ -1,18 +1,48 @@
-export default function DressCode() {
-  return (
-    <section className="dress-code-section">
+"use client";
 
+import { useEffect, useRef, useState } from "react";
+
+export default function DressCode() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className={`dress-code-section ${
+        isVisible ? "dress-code-visible" : ""
+      }`}
+    >
       {/* Decoración floral */}
       <div className="dress-floral dress-floral-left" />
       <div className="dress-floral dress-floral-right" />
 
       <div className="dress-code-container">
 
-        {/* ================================= */}
         {/* ENCABEZADO */}
-        {/* ================================= */}
-
-        <div className="dress-code-header">
+        <header className="dress-code-header">
 
           <p className="dress-eyebrow">
             Código de vestimenta
@@ -33,27 +63,20 @@ export default function DressCode() {
             con nosotros vistiendo tus mejores galas.
           </p>
 
-        </div>
+        </header>
 
-
-        {/* ================================= */}
-        {/* CÓDIGO DE VESTIMENTA */}
-        {/* ================================= */}
-
+        {/* DAMAS / CABALLEROS */}
         <div className="dress-code-options">
 
-          {/* ================================= */}
-          {/* DAMAS */}
-          {/* ================================= */}
-
-          <div className="dress-option">
+          {/* MUJERES */}
+          <article className="dress-option">
 
             <div className="dress-option-icon">
-              ◇
+              ♢
             </div>
 
             <h3>
-              Damas
+              Mujeres
             </h3>
 
             <p className="dress-style">
@@ -65,31 +88,31 @@ export default function DressCode() {
             </p>
 
             <div className="dress-warning">
+
               <span className="dress-warning-title">
-                BLANCO EXCLUSIVO DE LA NOVIA
+                IMPORTANTE
               </span>
 
               <p>
-                No colores pastel, blanco o beige,
-                ni tonos que puedan parecer blancos.
+                Blanco exclusivo de la novia.
+                <br />
+                No colores pastel ni tonos que
+                parezcan blanco o beige.
               </p>
+
             </div>
 
-          </div>
+          </article>
 
-
-          {/* ================================= */}
-          {/* CABALLEROS */}
-          {/* ================================= */}
-
-          <div className="dress-option">
+          {/* HOMBRES */}
+          <article className="dress-option">
 
             <div className="dress-option-icon">
-              ◇
+              ♢
             </div>
 
             <h3>
-              Caballeros
+              Hombres
             </h3>
 
             <p className="dress-style">
@@ -101,25 +124,22 @@ export default function DressCode() {
             </p>
 
             <div className="dress-warning">
+
               <span className="dress-warning-title">
-                NO MEZCLILLA
+                IMPORTANTE
               </span>
 
               <p>
-                El código de vestimenta requiere
-                un atuendo formal completo.
+                No mezclilla.
               </p>
+
             </div>
 
-          </div>
+          </article>
 
         </div>
 
-
-        {/* ================================= */}
         {/* FRASE FINAL */}
-        {/* ================================= */}
-
         <div className="dress-code-footer">
 
           <span>✦</span>
@@ -132,7 +152,6 @@ export default function DressCode() {
         </div>
 
       </div>
-
     </section>
   );
 }
