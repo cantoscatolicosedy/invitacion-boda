@@ -170,8 +170,7 @@ useEffect(() => {
 
       <div className="rsvp-decoration rsvp-decoration-left" />
 
-      <div className="rsvp-decoration rsvp-decoration-right" />
-
+      
       {/* ================================= */}
       {/* CONTENIDO */}
       {/* ================================= */}
