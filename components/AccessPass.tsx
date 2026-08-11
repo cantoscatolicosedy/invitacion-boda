@@ -23,6 +23,32 @@ export default function AccessPass({
         Pase de Acceso
       </p>
 
+       {/* MONOGRAMA C & S */}
+
+  <div className="pass-monogram">
+
+    <div className="monogram-frame">
+
+      <span className="monogram-letter">
+        C
+      </span>
+
+      <span className="monogram-ampersand">
+        &
+      </span>
+
+      <span className="monogram-letter">
+        S
+      </span>
+
+    </div>
+
+    <div className="monogram-ornament">
+      ✦
+    </div>
+
+  </div>
+
       <h2 className="pass-title">
         Clara Iveth  & Salvador 
       </h2>
