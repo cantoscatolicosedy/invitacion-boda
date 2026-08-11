@@ -92,11 +92,19 @@ export default function AccessPass({
 
 </div>
 
-<p className="pass-message">
-  Presente este pase
-  <br />
-  al ingresar al evento.
-</p>
+<div className="pass-footer">
+
+  <span className="pass-footer-ornament">
+    ✦
+  </span>
+
+  <p className="pass-message">
+    Presente este pase
+    <br />
+    al ingresar al evento.
+  </p>
+
+</div>
 
     </div>
   );
