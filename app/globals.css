@@ -4121,3 +4121,47 @@ body {
   font-size: 12px;
   line-height: 1;
 }
+
+/* =========================================
+   QR PREMIUM
+========================================= */
+
+.pass-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 28px auto 0;
+}
+
+.pass-qr-code {
+  align-self: flex-start;
+
+  margin-bottom: 8px;
+  margin-left: 4px;
+
+  color: #fff8ed;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.pass-qr-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  background: #fff8ed;
+
+  border: 1px solid rgba(244, 180, 0, 0.65);
+}
+
+.pass-qr-frame img {
+  display: block;
+
+  width: 240px;
+  height: 240px;
+}

@@ -83,17 +83,23 @@ export default function AccessPass({
 
       <div className="pass-divider" />
 
-      <p style={{ color: "white", fontSize: "12px", wordBreak: "break-all" }}>
-  {qrValue}
-</p>
+      <div className="pass-qr-section">
 
-      <QRCodePass value={qrValue} />
-      <p className="pass-message">
-      
-        Presente este pase
-        <br />
-        al ingresar al evento.
-      </p>
+  <span className="pass-qr-code">
+    {familyCode}
+  </span>
+
+  <div className="pass-qr-frame">
+    <QRCodePass value={qrValue} />
+  </div>
+
+</div>
+
+<p className="pass-message">
+  Presente este pase
+  <br />
+  al ingresar al evento.
+</p>
 
     </div>
   );
