@@ -27,27 +27,27 @@ export default function AccessPass({
 
   <div className="pass-monogram">
 
-    <div className="monogram-frame">
+  <div className="pass-monogram-frame">
 
-      <span className="monogram-letter">
-        C
-      </span>
+    <span className="pass-monogram-letter">
+      C
+    </span>
 
-      <span className="monogram-ampersand">
-        &
-      </span>
+    <span className="pass-monogram-ampersand">
+      &
+    </span>
 
-      <span className="monogram-letter">
-        S
-      </span>
-
-    </div>
-
-    <div className="monogram-ornament">
-      ✦
-    </div>
+    <span className="pass-monogram-letter">
+      S
+    </span>
 
   </div>
+
+  <div className="pass-monogram-ornament">
+    ✦
+  </div>
+
+</div>
 
       <h2 className="pass-title">
         Clara Iveth  & Salvador 

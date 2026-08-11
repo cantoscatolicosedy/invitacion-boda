@@ -4062,3 +4062,62 @@ body {
   margin: 22px auto 18px;
 }
 
+
+
+
+/* =========================================
+   MONOGRAMA EXCLUSIVO DEL PASE
+========================================= */
+
+.pass-monogram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 18px auto 20px;
+}
+
+.pass-monogram-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 82px;
+  height: 82px;
+
+  border: 1px solid rgba(244, 180, 0, 0.75);
+  border-radius: 50%;
+
+  position: relative;
+}
+
+.pass-monogram-letter {
+  color: #fff8ed;
+
+  font-family: "Alex Brush", cursive;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.pass-monogram-ampersand {
+  margin: 0 -2px;
+
+  color: #f4b400;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+
+  position: relative;
+  z-index: 2;
+}
+
+.pass-monogram-ornament {
+  margin-top: 8px;
+
+  color: #f4b400;
+
+  font-size: 12px;
+  line-height: 1;
+}
