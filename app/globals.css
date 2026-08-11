@@ -4049,3 +4049,16 @@ body {
   }
 }
 
+/* =========================================
+   MONOGRAMA DEL PASE
+========================================= */
+
+.pass-monogram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 22px auto 18px;
+}
+
