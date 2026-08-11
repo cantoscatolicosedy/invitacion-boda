@@ -85,10 +85,7 @@ export default function AccessPass({
 
       <div className="pass-qr-section">
 
-  <span className="pass-qr-code">
-    {familyCode}
-  </span>
-
+  
   <div className="pass-qr-frame">
     <QRCodePass value={qrValue} />
   </div>
