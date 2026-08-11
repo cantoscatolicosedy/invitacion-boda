@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 
 const gifts = [
   {
-    number: "01",
-    title: "Liverpool",
-    description:
-      "Si deseas hacernos un regalo, puedes encontrar nuestra mesa de regalos aquí.",
-    button: "Ver mesa de regalos",
-    url: "#",
-  },
+  number: "01",
+  title: "Amazon",
+  description:
+    "Si deseas hacernos un regalo, puedes encontrar nuestra mesa de regalos aquí.",
+  button: "Ver mesa de regalos",
+  url: "https://www.amazon.com.mx/wedding/guest-view/39HMNR25HHEFG",
+},
   {
     number: "02",
     title: "Otra opción",
