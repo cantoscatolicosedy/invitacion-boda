@@ -8,19 +8,27 @@ export default function QRCodePass({ value }: QRCodePassProps) {
   return (
     <div
       style={{
-        background: "#FFFFFF",
-        padding: "20px",
-        borderRadius: "12px",
         display: "inline-block",
+        padding: "10px",
+        background: "#FFF8ED",
+        border: "1px solid #D4AF37",
       }}
     >
-      <QRCode
-        value={value}
-        size={220}
-        bgColor="#FFFFFF"
-        fgColor="#000000"
-        level="M"
-      />
+      <div
+        style={{
+          padding: "10px",
+          background: "#FFFFFF",
+          borderRadius: "8px",
+        }}
+      >
+        <QRCode
+          value={value}
+          size={220}
+          bgColor="#FFFFFF"
+          fgColor="#000000"
+          level="M"
+        />
+      </div>
     </div>
   );
 }
