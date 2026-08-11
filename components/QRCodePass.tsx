@@ -6,24 +6,11 @@ type QRCodePassProps = {
 
 export default function QRCodePass({ value }: QRCodePassProps) {
   return (
-    <div
-      style={{
-        display: "inline-block",
-        padding: "10px",
-        background: "#FFF8ED",
-        border: "1px solid #D4AF37",
-      }}
-    >
-      <div
-        style={{
-          padding: "10px",
-          background: "#FFFFFF",
-          borderRadius: "8px",
-        }}
-      >
+    <div className="qr-pass-frame">
+      <div className="qr-pass-inner">
         <QRCode
           value={value}
-          size={220}
+          size={210}
           bgColor="#FFFFFF"
           fgColor="#000000"
           level="M"

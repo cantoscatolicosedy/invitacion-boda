@@ -4216,3 +4216,47 @@ body {
     font-size: 1.65rem;
   }
 }
+
+
+/* =========================================
+   QR — ACABADO PREMIUM
+========================================= */
+
+.qr-pass-frame {
+  display: inline-block;
+  padding: 9px;
+
+  background: #fff8ed;
+
+  border: 1px solid #d4af37;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+
+  margin: 0 auto;
+}
+
+.qr-pass-inner {
+  display: block;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+}
+
+/* =========================================
+   MENSAJE DEL PASE
+========================================= */
+
+.pass-message {
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #fff8ed;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
