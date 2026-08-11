@@ -2494,25 +2494,46 @@ body {
   pointer-events:none;
 }
 
-.pass-eyebrow{
-  text-transform:uppercase;
-  letter-spacing:.35em;
-  font-size:.78rem;
-  color:#d4af37;
-  text-align:center;
+.pass-eyebrow {
+  margin: 0;
+
+  text-align: center;
+
+  color: #d4af37;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
 }
 
-.pass-title{
-  margin-top:.8rem;
-  text-align:center;
-  font-size:2rem;
-  font-family:serif;
+
+.pass-title {
+  margin: 0.7rem 0 0;
+
+  text-align: center;
+
+  color: #fff8ed;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.65rem, 5vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
-.pass-date{
-  text-align:center;
-  margin-top:.4rem;
-  color:#f5ead7;
+
+.pass-date {
+  margin: 0.55rem 0 0;
+
+  text-align: center;
+
+  color: #f5ead7;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .pass-divider{
