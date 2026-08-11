@@ -2509,18 +2509,11 @@ body {
 
 
 .pass-title {
-  margin: 0.7rem 0 0;
-
+  margin-top: .8rem;
   text-align: center;
-
-  color: #fff8ed;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(1.65rem, 5vw, 2.1rem);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
+  font-size: 2rem;
+  font-family: serif;
+  white-space: nowrap;
 }
 
 
@@ -4216,4 +4209,10 @@ body {
   font-size: 13px;
   line-height: 1.7;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  .pass-title {
+    font-size: 1.65rem;
+  }
 }
