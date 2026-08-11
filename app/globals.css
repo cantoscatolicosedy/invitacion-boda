@@ -2486,10 +2486,7 @@ body {
   background:
     radial-gradient(circle at top left,
       rgba(255,255,255,.08),
-      transparent 45%),
-    radial-gradient(circle at bottom right,
-      rgba(212,175,55,.10),
-      transparent 40%);
+      transparent 45%);
 
   pointer-events:none;
 }
