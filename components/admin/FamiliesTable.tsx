@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Family } from "@/types/family";
 
 type Props = {
@@ -11,8 +12,53 @@ export default function FamiliesTable({
   onEdit,
   onDelete,
 }: Props) {
-  return (
-    <table className="admin-table">
+
+    const [sortBy, setSortBy] = useState<"code" | "family">("code");
+
+  const sortedFamilies = [...families].sort((a, b) => {
+    if (sortBy === "code") {
+      return a.family_code.localeCompare(
+        b.family_code,
+        undefined,
+        { numeric: true }
+      );
+    }
+
+    return a.family_name.localeCompare(
+      b.family_name,
+      "es",
+      { sensitivity: "base" }
+    );
+  });
+
+    return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          marginBottom: "16px",
+        }}
+      >
+        <label htmlFor="family-sort">
+          Ordenar por:
+        </label>
+
+        <select
+          id="family-sort"
+          value={sortBy}
+          onChange={(e) =>
+            setSortBy(e.target.value as "code" | "family")
+          }
+          className="admin-select"
+        >
+          <option value="code">Código</option>
+          <option value="family">Familia</option>
+        </select>
+      </div>
+
+      <table className="admin-table">
       <thead>
         <tr>
           <th>Código</th>
@@ -27,7 +73,7 @@ export default function FamiliesTable({
       </thead>
 
       <tbody>
-        {families.map((family) => (
+        {sortedFamilies.map((family) => (
           <tr key={family.id}>
             <td>{family.family_code}</td>
             <td>{family.family_name}</td>
@@ -119,5 +165,6 @@ En ella encontrarán todos los detalles del evento y podrán confirmar su asiste
         ))}
       </tbody>
     </table>
+    </>
   );
 }
